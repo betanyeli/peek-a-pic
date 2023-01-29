@@ -1,15 +1,14 @@
 import { StyleSheet } from 'react-native/';
 
 const styles = StyleSheet.create({
-  iconContainer: {
-    flexDirection: 'row',
+  lottie: { width: 400 },
+  textContainer: {
     justifyContent: 'center',
-    marginVertical: 40,
-  },
-
-  titleContainer: {
     alignItems: 'center',
-    marginTop: 40,
+  },
+  common: {
+    fontFamily: 'Roboto',
+    color: 'white',
   },
   title: {
     fontWeight: '700',
@@ -17,10 +16,6 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-  },
-  color: {
-    color: 'white',
-    fontFamily: 'Roboto',
   },
 });
 

@@ -9,9 +9,7 @@ exports[`CameraAnimation test Should match with snapshot 1`] = `
       },
       undefined,
       {
-        "alignContent": "flex-start",
         "height": 400,
-        "justifyContent": "flex-start",
         "width": 400,
       },
     ]
@@ -31,10 +29,8 @@ exports[`CameraAnimation test Should match with snapshot 1`] = `
     speed={1}
     style={
       {
-        "alignContent": "flex-start",
         "aspectRatio": 1,
         "height": 400,
-        "justifyContent": "flex-start",
         "width": 400,
       }
     }

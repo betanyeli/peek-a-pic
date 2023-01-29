@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FooterComponenttest Should be match with snapshot 1`] = `[Function]`;
+
+exports[`FooterComponenttest Should be match with snapshot with logo 1`] = `[Function]`;
+
+exports[`FooterComponenttest Should be match with snapshot without logo 1`] = `[Function]`;

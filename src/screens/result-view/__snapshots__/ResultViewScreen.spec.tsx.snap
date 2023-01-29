@@ -21,9 +21,12 @@ exports[`ResultViewScreen test Should match with snapshot 1`] = `
   <View
     style={
       {
+        "alignItems": "center",
         "flex": 1,
         "justifyContent": "flex-end",
-        "margin": 40,
+        "marginBottom": 10,
+        "marginHorizontal": 40,
+        "marginTop": 30,
       }
     }
   >

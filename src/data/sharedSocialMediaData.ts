@@ -1,26 +1,33 @@
-export const shareSocialMediaData = [{
+export interface shareSocialMediaDataItem {
+  id: number;
+  icon: string;
+  url: string;
+}
+
+export const shareSocialMediaData: shareSocialMediaDataItem[] = [
+  {
     id: 0,
     icon: 'instagram',
-    url: 'https://www.instagram.com/betanyeli/'
-},
-{
+    url: 'https://www.instagram.com/betanyeli/',
+  },
+  {
     id: 1,
     icon: 'github',
-    url: 'https://github.com/betanyeli'
-},
-{
+    url: 'https://github.com/betanyeli',
+  },
+  {
     id: 2,
     icon: 'linkedin',
-    url: 'https://www.linkedin.com/in/betanyeli-bravo/'
-},
-{
+    url: 'https://www.linkedin.com/in/betanyeli-bravo/',
+  },
+  {
     id: 3,
     icon: 'gmail',
-    url: 'mailto:betangelii@gmail.com'
-},
-{
+    url: 'mailto:betangelii@gmail.com',
+  },
+  {
     id: 4,
     icon: 'twitter',
-    url: 'https://twitter.com/southsidesnook'
-},
+    url: 'https://twitter.com/southsidesnook',
+  },
 ];
