@@ -23,9 +23,11 @@
       </activity>
     </application>
     <!-- React native vision camera -->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 <!-- optionally, if you want to record audio: -->
-  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
 <!-- React native vision camera  end-->
 </manifest>
