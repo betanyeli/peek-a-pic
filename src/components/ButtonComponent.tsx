@@ -12,7 +12,7 @@ export function ButtonComponent({
     icon = "camera"
 }: React.PropsWithChildren<Props>) {
     return (
-        <Button icon={icon} mode="elevated" onPress={onPress} style={{ margin: 16 }}
+        <Button icon={icon} mode="contained-tonal" onPress={onPress} style={{ margin: 16 }}
         >
             {children}
         </Button>

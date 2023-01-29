@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00000',
     padding: 24
   },
+  lottie: { width: 400}
 });
 
 export default styles;

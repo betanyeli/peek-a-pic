@@ -23,14 +23,10 @@ function Navigation() {
         <Tab.Navigator screenOptions={{ headerShown: false }}>
             <Tab.Screen options={({ navigation }) => ({
                 title: 'PeekAPic',
-                tabBarLabel: 'Get a pic',
+                tabBarLabel: 'Home',
                 tabBarIcon: () => <View><Text>Icon</Text></View>,
             })} name="Camera" component={CameraViewStackScreen} />
-            {/* <Tab.Screen options={({ navigation }) => ({
-                title: 'Result',
-                tabBarLabel: 'Result',
-                tabBarIcon: () => <View><Text>Icon</Text></View>,
-            })} name='ResultView' component={ResultViewScreen} /> */}
+
         </Tab.Navigator>
     );
 }

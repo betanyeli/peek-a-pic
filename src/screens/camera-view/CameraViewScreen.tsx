@@ -1,14 +1,14 @@
-import { Image, View } from 'react-native';
-import React, { useEffect, useRef } from 'react';
+import { View } from 'react-native';
+import React, { useEffect } from 'react';
 import * as ImagePicker from 'react-native-image-picker';
-import styles from './CameraViewScreen.styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { ButtonComponent } from '../../components/ButtonComponent';
 import { useNavigation } from '@react-navigation/native';
-import AnimatedLottieView from 'lottie-react-native';
+import CameraAnimation from './CameraAnimation';
+
 
 /* toggle includeExtra */
 const includeExtra = true;
+
 export interface Action {
     title: string;
     type: 'capture' | 'library';
@@ -17,7 +17,7 @@ export interface Action {
 
 const actions: Action[] = [
     {
-        title: 'Take Image',
+        title: 'Take a Pic',
         type: 'capture',
         options: {
             saveToPhotos: true,
@@ -27,7 +27,7 @@ const actions: Action[] = [
         },
     },
     {
-        title: 'Select Image',
+        title: 'Peek a Pic',
         type: 'library',
         options: {
             selectionLimit: 0,
@@ -37,14 +37,12 @@ const actions: Action[] = [
         },
     },
 
-
-
 ];
 
 const CameraViewScreen = () => {
     const [response, setResponse] = React.useState<any>(null);
     const navigation = useNavigation();
-    const animation = useRef(null);
+
 
     const onButtonPress = React.useCallback((type: any, options: any) => {
         if (type === 'capture') {
@@ -63,30 +61,24 @@ const CameraViewScreen = () => {
     return (
         <View style={{
             flex: 1,
-            backgroundColor: '#000001',
+            backgroundColor: '#000000',
             alignContent: 'center',
             alignItems: 'center',
             padding: 40
         }}>
+            <CameraAnimation />
+            {actions.map(({ title, type, options }) => {
+                return (
+                    <ButtonComponent
+                        icon={type === 'capture' ? 'camera' : 'image-size-select-actual'}
+                        key={title}
+                        onPress={() => onButtonPress(type, options)}>
+                        {title}
+                    </ButtonComponent>
+                );
+            })}
 
-            <AnimatedLottieView
-                autoPlay
-                ref={animation}
-                source={require('../../assets/animations/camera.json')}
-            />
 
-            <View style={{ justifyContent: 'flex-start' }}>
-                {actions.map(({ title, type, options }) => {
-                    return (
-                        <ButtonComponent
-                            icon={type === 'capture' ? 'camera' : 'image-size-select-actual'}
-                            key={title}
-                            onPress={() => onButtonPress(type, options)}>
-                            {title}
-                        </ButtonComponent>
-                    );
-                })}
-            </View>
 
         </View >
     );
