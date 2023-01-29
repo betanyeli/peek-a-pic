@@ -120,9 +120,9 @@ android {
         }
         release {
       storeFile file('betanyeli_peekapic.keystore') 
-      storePassword '******' 
+      storePassword '*****' 
       keyAlias 'peekapic' 
-      keyPassword '******' 
+      keyPassword '*****' 
       }
     }
     buildTypes {

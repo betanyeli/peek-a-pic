@@ -216,7 +216,7 @@ exports[`ResultViewScreen test Should match with snapshot 1`] = `
                   ]
                 }
               >
-                Go back
+                Retake
               </Text>
             </View>
           </View>
