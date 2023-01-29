@@ -1,35 +1,51 @@
-import { Image, Text, View } from 'react-native';
-import React from 'react';
+import { Image, Dimensions, View } from 'react-native';
+import React, { useState } from 'react';
 import styles from './ResultViewScreen.styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ErrorAnimation from './ErrorAnimation';
+import { ActivityIndicator, Button } from 'react-native-paper';
+import SharedSocialMediaComponent from '../../components/shared-social-media/SharedSocialMediaComponent';
+import FooterComponent from '../../components/footer/FooterComponent';
 
-const ResultViewScreen = ({ route }: any) => {
-    const { response } = route.params
+
+const ResultViewScreen = ({ route, navigation }: any) => {
+    const { response } = route.params;
+    const widthImg = Dimensions.get('window').width;
+    const heightImg = 250
+    const labelButton: string = response?.errorCode ? "Try again" : "Go back";
+    const defaultImg: string = "https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80";
+
+    const [loading, setIsLoading] = useState<boolean>(false);
+
+
+
     return (
-        <SafeAreaView style={{
-            flex: 1,
-            backgroundColor: '#000',
-        }}>
+        <SafeAreaView style={styles.container}>
+            {loading && <ActivityIndicator animating />}
+            {response?.errorCode && <ErrorAnimation />}
             {response?.assets &&
-                response?.assets.map(({ uri }: { uri: string }) => (
-                    <View key={uri} style={{
-                        marginVertical: 24,
-                        alignItems: 'center'
-                    }}>
+                response?.assets.map(({ uri, width }: { uri: string, width: number }) => (
+                    <View key={uri} style={styles.response}>
                         <Image
-                            resizeMode="cover"
+                            resizeMode="contain"
                             resizeMethod="scale"
                             style={{
-                                width: 200,
-                                height: 200,
+                                width: widthImg - 48,
+                                height: heightImg,
                             }}
-                            source={{ uri: uri }}
+                            source={{ uri: width > 0 ? uri : defaultImg }}
+                            onLoadStart={() => setIsLoading(true)}
+                            onLoadEnd={() => setIsLoading(false)}
                         />
+                        <SharedSocialMediaComponent />
                     </View>
                 ))}
 
-            {response?.errorCode && <ErrorAnimation />}
+            <FooterComponent>
+                <Button mode='contained' icon='rotate-left' onPress={() => { navigation.goBack() }}>{labelButton}</Button>
+            </FooterComponent>
+
+
         </SafeAreaView>
     );
 };
