@@ -12,7 +12,7 @@ exports[`ResultViewScreen test Should match with snapshot 1`] = `
   }
   style={
     {
-      "backgroundColor": "#000",
+      "backgroundColor": "#101010",
       "flex": 1,
       "padding": 40,
     }

@@ -14,12 +14,13 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: '700',
     fontSize: 20,
+    marginBottom: 8
   },
   subtitle: {
     fontSize: 16,
   },
   color: {
-    color: 'white',
+    color: '#f3f3f3',
     fontFamily: 'Roboto',
   },
 });

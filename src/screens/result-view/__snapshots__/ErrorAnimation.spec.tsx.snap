@@ -64,12 +64,13 @@ exports[`ErrorAnimation test Should match with snapshot 1`] = `
           },
           [
             {
-              "color": "white",
+              "color": "#f3f3f3",
               "fontFamily": "Roboto",
             },
             {
               "fontSize": 20,
               "fontWeight": "700",
+              "marginBottom": 8,
             },
           ],
         ]
@@ -94,7 +95,7 @@ exports[`ErrorAnimation test Should match with snapshot 1`] = `
           },
           [
             {
-              "color": "white",
+              "color": "#f3f3f3",
               "fontFamily": "Roboto",
             },
             {
